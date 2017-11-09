@@ -69,11 +69,11 @@
                 <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
             </nav>
 
-        </div><!-- /.blog-main -->
+        </div>
 
-        <?php include('sidebar.php') ?><!-- /.blog-sidebar -->
+        <?php include('sidebar.php') ?>
 
-    </div><!-- /.row -->
+    </div>
 
 </main><!-- /.container -->
 

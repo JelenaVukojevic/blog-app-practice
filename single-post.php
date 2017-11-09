@@ -38,7 +38,7 @@
             <?php
                 if (isset($_GET['post_id'])) {
 
-                    $sql = "SELECT * FROM posts  WHERE id = {$_GET['post_id']}";
+                    $sql = "SELECT * FROM posts WHERE id = {$_GET['post_id']}";
                     $statement = $connection->prepare($sql);
 
                     $statement->execute();
@@ -55,6 +55,36 @@
 
 	            <p><?php echo $singlePost['body'] ?></p>
 	        </div>
+
+	        <div>
+                <h3>Comments</h3>
+
+                <?php
+
+                	$sql = "SELECT * FROM comments WHERE post_id = {$_GET['post_id']}";
+                	$statement = $connection->prepare($sql);
+                	$statement->execute();
+                	$statement->setFetchMode(PDO::FETCH_ASSOC);
+                	$comments = $statement->fetchAll();
+
+                ?>
+
+                <?php
+	                foreach ($comments as $comment) {
+	            ?>
+
+                    <div class="comments">
+                        <ul>
+                        	<li> <?php echo $comment['author'] ?> </li>
+                        	<li> <?php echo $comment['text'] ?> </li>
+                        </ul>
+                        <hr>
+                    </div>
+
+                <?php
+	                }
+	            ?>
+                            
 
 	        <?php
                 } else {

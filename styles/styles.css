@@ -33,3 +33,15 @@ h2.blog-post-title a {
 .blog-post-title a:hover {
 	text-decoration: underline;
 }
+
+.comments {
+	margin-top: 1em;
+}
+
+.comments ul {
+	list-style: none;
+}
+
+.comments ul li:first-child {
+	font-weight: bold;
+}
