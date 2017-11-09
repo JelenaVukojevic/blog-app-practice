@@ -25,6 +25,7 @@
 
 	<link href="styles/blog.css" rel="stylesheet">
 	<link href="styles/styles.css" rel="stylesheet">
+
 </head>
 <body>
 	<?php include('header.php') ?>
@@ -69,29 +70,38 @@
 
                 ?>
 
-                <?php
-	                foreach ($comments as $comment) {
-	            ?>
+                <form>
+                	<label for="author">Author</label>
+                	<input type="text" id="author" placeholder="Author name">
+                	<label for="comment">Comment text</label>
+                	<textarea rows="5" placeholder="Comment text"></textarea>	
+                </form>
 
-                    <div class="comments">
+                <div class="comment">
+                	<a id="hideshow" class="btn btn-outline-primary" href="#" onclick="hideComments('hide-show')";>Hide comments</a>
+                </div>
+
+                <div id="comments">
+
+	                <?php
+		                foreach ($comments as $comment) {
+		            ?>
                         <ul>
                         	<li> <?php echo $comment['author'] ?> </li>
                         	<li> <?php echo $comment['text'] ?> </li>
                         </ul>
                         <hr>
-                    </div>
-
                 <?php
 	                }
 	            ?>
-                            
+
+	            </div>
 
 	        <?php
                 } else {
                     echo('post_id nije prosledjen kroz $_GET');
                 }
             ?>
-
 
             <nav class="blog-pagination">
                 <a class="btn btn-outline-primary" href="#">Older</a>
@@ -107,5 +117,7 @@
 </main>
 
 <?php include('footer.php') ?>
+
+<script type="text/javascript" src="show-hide-comments.js"></script>
 </body>
 </html>

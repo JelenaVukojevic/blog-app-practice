@@ -45,3 +45,13 @@ h2.blog-post-title a {
 .comments ul li:first-child {
 	font-weight: bold;
 }
+
+.sidebar-module p a {
+	font-size: 18px;
+	color: #555;
+}
+
+.comment {
+	margin-bottom: 1em;
+}
+
