@@ -36,6 +36,15 @@
         <div class="col-sm-8 blog-main">
 
             <div class="blog-post">
+                <h2>Add new post</h2>
+                <div class="hidden"><p class="alert alert-danger">Please fill in all fields.</p></div>
+                <form method="post" action="new-post.php">
+                    <label for="title">Post title</label>
+                    <input type="text" name="title" placeholder="Place your title here" >
+                    <label for="post">Post content</label>
+                    <textarea name="text" rows="15" placeholder="Type your content..." ></textarea>
+                    <input type="submit" value="Add post">    
+                </form>
                 
             </div>
 
@@ -48,5 +57,6 @@
 </main>
 
 <?php include('footer.php') ?>
+<script type="text/javascript" src="show-hide-comments.js"></script>
 </body>
 </html>

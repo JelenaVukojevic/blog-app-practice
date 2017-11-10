@@ -51,7 +51,96 @@ h2.blog-post-title a {
 	color: #555;
 }
 
-.comment {
+#hideshow {
 	margin-bottom: 1em;
 }
 
+.comments form {
+	margin: 20px 0;
+	display: flex;
+	flex-direction: column;
+	max-width: 80%;
+}
+
+.comments form * {
+	margin-top: 0.5em;
+	padding: 5px
+}
+
+.comments form input, textarea {
+	border: 1px solid #333;
+	border-radius: 10px;
+}
+
+.comments form input:last-child {
+	width: 150px;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: transparent;
+	border: 1px solid #007bff;
+	color: #007bff;
+	margin-bottom: 20px;
+}
+
+.comments form input:last-child:hover {
+	background-color: #007bff;
+	color: white;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+
+.hidden {
+	display: none;
+}
+
+
+.deletePost {
+	margin-bottom: 20px;
+	float: right;
+}
+
+.comments {
+	clear: both;
+}
+
+.comments .deleteComm input {
+	width: 20%;
+	border-radius: 10px;
+	background-color: transparent;
+	border: 1px solid #007bff;
+	color: #007bff;
+}
+
+.blog-post form {
+	display: flex;
+	flex-direction: column;
+}
+
+.blog-post form input, textarea {
+	border: 1px solid #333;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+.blog-post form input:last-child {
+	width: 150px;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: transparent;
+	border: 1px solid #007bff;
+	color: #007bff;
+	margin: 20px ;
+}
+
+.blog-post form input:last-child:hover {
+	background-color: #007bff;
+	color: white;
+}
+
+form label {
+	font-size: 16px;
+}

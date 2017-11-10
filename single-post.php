@@ -57,7 +57,11 @@
 	            <p><?php echo $singlePost['body'] ?></p>
 	        </div>
 
-	        <div>
+            <div class="deletePost">
+                    <a class="btn btn-outline-primary" href="#";>Delete this post</a>
+                </div>
+
+	        <div class="comments">
                 <h3>Comments</h3>
 
                 <?php
@@ -70,14 +74,18 @@
 
                 ?>
 
-                <form>
-                	<label for="author">Author</label>
-                	<input type="text" id="author" placeholder="Author name">
-                	<label for="comment">Comment text</label>
-                	<textarea rows="5" placeholder="Comment text"></textarea>	
+                <form method="post" action="new-comment.php">
+                    <label for="author">Author</label>
+                    <input type="text" name="author" placeholder="Your name" required>
+                    <label for="comment">Comment text</label>
+                    <textarea name="comment" rows="3" cols="40" placeholder="Type your comment..." required></textarea>
+                    <input type="hidden" name="post_id" value="<?php echo $_GET['post_id'] ?>">
+                    <input type="submit" value="Submit comment">    
                 </form>
 
-                <div class="comment">
+                
+
+                <div>
                 	<a id="hideshow" class="btn btn-outline-primary" href="#" onclick="hideComments('hide-show')";>Hide comments</a>
                 </div>
 
@@ -90,6 +98,11 @@
                         	<li> <?php echo $comment['author'] ?> </li>
                         	<li> <?php echo $comment['text'] ?> </li>
                         </ul>
+                        <form class="deleteComm" method="post" action='delete-comment.php'>
+                            <input type="submit" name="delete" value="Delete">
+                            <input type="hidden" name="id" value="<?php echo $comment['id'] ?>">
+                            <input type="hidden" name="post_id" value="<?php echo $_GET['post_id'] ?>">
+                        </form>
                         <hr>
                 <?php
 	                }
