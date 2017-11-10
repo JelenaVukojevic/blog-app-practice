@@ -36,7 +36,17 @@
         <div class="col-sm-8 blog-main">
 
             <div class="blog-post">
-                
+                <h2>Add new post</h2>
+                <form name="comments" method="$_POST" onsubmit="required()">
+                    <label for="title">Post title</label>
+                    <input type="text" name="title" placeholder="Place your title here" >
+                    <label class="rq">*Required field</label>
+                    <label for="post">Post content</label>
+                    <textarea name="text" rows="30" placeholder="Type your content..." ></textarea>
+                    <label class="rq">*Required field</label>
+                    <input type="submit" value="Add post">    
+                </form>
+                <div id="alert" class="hidden"><p class="alert alert-danger">Please fill in all fields.</p></div>
             </div>
 
         </div>
@@ -48,5 +58,6 @@
 </main>
 
 <?php include('footer.php') ?>
+<script type="text/javascript" src="show-hide-comments.js"></script>
 </body>
 </html>
