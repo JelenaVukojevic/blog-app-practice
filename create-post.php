@@ -37,6 +37,7 @@
 
             <div class="blog-post">
                 <h2>Add new post</h2>
+<<<<<<< HEAD
                 <div class="hidden"><p class="alert alert-danger">Please fill in all fields.</p></div>
                 <form method="post" action="new-post.php">
                     <label for="title">Post title</label>
@@ -46,6 +47,18 @@
                     <input type="submit" value="Add post">    
                 </form>
                 
+=======
+                <form name="comments" method="$_POST" onsubmit="required()">
+                    <label for="title">Post title</label>
+                    <input type="text" name="title" placeholder="Place your title here" >
+                    <label class="rq">*Required field</label>
+                    <label for="post">Post content</label>
+                    <textarea name="text" rows="30" placeholder="Type your content..." ></textarea>
+                    <label class="rq">*Required field</label>
+                    <input type="submit" value="Add post">    
+                </form>
+                <div id="alert" class="hidden"><p class="alert alert-danger">Please fill in all fields.</p></div>
+>>>>>>> fb04cd1926aa2aa8a30b4bf6ee5834532561144d
             </div>
 
         </div>

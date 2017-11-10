@@ -74,6 +74,7 @@
 
                 ?>
 
+<<<<<<< HEAD
                 <form method="post" action="new-comment.php">
                     <label for="author">Author</label>
                     <input type="text" name="author" placeholder="Your name" required>
@@ -86,6 +87,21 @@
                 
 
                 <div>
+=======
+                <form method="$_POST">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" placeholder="Your name" required>
+                    <label for="comment">Comment text</label>
+                    <textarea rows="3" cols="40" placeholder="Type your comment..." required></textarea>
+                    <input type="submit" value="Submit comment">    
+                </form>
+
+                <div class="deletePost">
+                    <a class="btn btn-outline-primary" href="#";>Delete this post</a>
+                </div>
+
+                <div class="comment">
+>>>>>>> fb04cd1926aa2aa8a30b4bf6ee5834532561144d
                 	<a id="hideshow" class="btn btn-outline-primary" href="#" onclick="hideComments('hide-show')";>Hide comments</a>
                 </div>
 
@@ -98,11 +114,17 @@
                         	<li> <?php echo $comment['author'] ?> </li>
                         	<li> <?php echo $comment['text'] ?> </li>
                         </ul>
+<<<<<<< HEAD
                         <form class="deleteComm" method="post" action='delete-comment.php'>
                             <input type="submit" name="delete" value="Delete">
                             <input type="hidden" name="id" value="<?php echo $comment['id'] ?>">
                             <input type="hidden" name="post_id" value="<?php echo $_GET['post_id'] ?>">
                         </form>
+=======
+                        <div class="deleteComment">
+                            <a class="btn btn-outline-primary" href="#";>Delete</a>
+                        </div>
+>>>>>>> fb04cd1926aa2aa8a30b4bf6ee5834532561144d
                         <hr>
                 <?php
 	                }
