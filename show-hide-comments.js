@@ -10,16 +10,7 @@ function hideComments() {
     }
 }
 
-function required() {  
-	var empty = document.forms["comments"]["author"]["text"].value;  
-	if (empty == "")  
-	{  
-		document.getElementById("alert").removeClassList("hidden");  
-		return false;  
-	}  
-	else   
-	{   
-		document.getElementById("alert").addClassList("hidden");
-		return true;   
-	}  
+function promptMe(){
+   var userAdjective = prompt("Do you really want to delete this post?");
+   alert (userAdjective);
 }

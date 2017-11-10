@@ -1,5 +1,7 @@
 <?php
  
+    header("Location: http://localhost:8000/posts.php");
+
     $servername = "127.0.0.1";
     $username = "root";
     $password = "vivify";
@@ -15,5 +17,10 @@
         echo $e->getMessage();
     }
 
-    var_dump($_POST)
+    $newComment = "INSERT INTO posts (title, body, author, created_at) VALUES ('{$_POST['title']}', '{$_POST['text']}', '{$_POST['author']}', '2017-11-11 21:59')";
+
+    var_dump($newComment);
+
+       $statement = $connection->prepare($newComment);
+       $statement->execute();
 ?>

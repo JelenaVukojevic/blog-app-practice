@@ -1,4 +1,6 @@
 <?php
+
+    header("Location: posts.php");
  
     $servername = "127.0.0.1";
     $username = "root";
@@ -15,10 +17,11 @@
         echo $e->getMessage();
     }
 
-    var_dump($_POST)
+    $post_id = $_POST['post_id'];
 
-    $newComment = "INSERT INTO posts (title, body, author, created_at) VALUES ('{$_POST['title']}', '{$_POST['text']}', 'JelenaV' , '{$_POST['YYYY-MM-DD hh:mm:ss']}')";
+    $deletePost = "DELETE FROM posts where id = $post_id LIMIT 1";
 
-       $statement = $connection->prepare($newComment);
-       $statement->execute();
+    $statement = $connection->prepare($deletePost);
+    $statement->execute();
+
 ?>
